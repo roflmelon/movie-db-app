@@ -32,17 +32,14 @@ function handleSearch(event) {
 }
 
 function printResults(data) {
-      
-   console.log(data);
+
     let movieCard = document.createElement("div");
     movieCard.classList.add('card');
 
-
     //movieCard.setAttribute("data-id",data.id);
     movieCard.addEventListener("click", function(event){
-      setLocalStorageID(data.id)
+      setLocationID(data.id)
     })
-
 
     let movieImageEl = document.createElement('img');
     movieImageEl.setAttribute('src',"");
@@ -57,8 +54,7 @@ function printResults(data) {
     );
     }
   //image
-
-
+  
     let movieBody = document.createElement('div');
     movieBody.classList.add('card-body');
     //movieBody.setAttribute("data-id",data.id);
@@ -86,7 +82,7 @@ function printResults(data) {
 
 }
 
-function setLocalStorageID(moveId){
+function setLocationID(moveId){
    //var ID = event.target.getAttribute("data-id")
    //console.log("ID",ID,event.target)
    //localStorage.setItem("movie-id",ID)
