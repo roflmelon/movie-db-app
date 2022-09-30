@@ -90,7 +90,7 @@ function setLocalStorageID(moveId){
   // var ID = event.target.getAttribute("data-id")
   // console.log("ID",ID,event.target)
   // localStorage.setItem("movie-id",ID)
-  var queryString = './detail-page.html?id=' +moveId;
+  var queryString = './detail-page.html?id=' + moveId;
 
   location.assign(queryString);
  
