@@ -9,10 +9,14 @@ body{
     margin: 0;
     background-color: rgb(177, 177, 177);
     background-image: url("../image/background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header{
     background-image: url("../image/background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 0rem;
     display:flex;
     background-color: rgb(88, 88, 88);
@@ -69,6 +73,13 @@ h3{
 .btn2{
     visibility: hidden;
 }
+#btnyear{
+
+    background-color: aqua;
+}
+#btnyear:hover{
+    background-color: rgb(0, 126, 126);
+}
 
 @media screen and (max-width: 768px) {
     header{
@@ -87,4 +98,5 @@ h3{
     .btn2{
         display: none;
     }
+   
   }
