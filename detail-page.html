@@ -14,124 +14,70 @@
       integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
     <link rel="stylesheet" href="assets/css/details-page.css" />
     <title>Movie Details</title>
   </head>
   <body>
+    <div id="dialog" title="No input!">
+      <p>Please enter a movie name!!</p>
+    </div>
     <div class="container">
       <div class="nav-bar">
-        <form class="pure-form">
-          <input type="email" placeholder="Search Movies:" />
+        <form class="pure-form" id="search-bar">
+          <input type="text" placeholder="Search Movies:" />
           <button type="submit" class="pure-button pure-button-primary">
             Search
           </button>
-          <div class="filters">
-            <select id="stacked-state">
-              <option>1990</option>
-              <option>2000</option>
-              <option>2010</option>
-            </select>
-            <select id="stacked-state">
-              <option>AL</option>
-              <option>CA</option>
-              <option>IL</option>
-            </select>
-            <select id="stacked-state">
-              <option>AL</option>
-              <option>CA</option>
-              <option>IL</option>
-            </select>
-            <select id="stacked-state">
-              <option>AL</option>
-              <option>CA</option>
-              <option>IL</option>
-            </select>
-          </div>
         </form>
       </div>
       <div class="main-content">
         <div class="poster">
-          <img
-            src="https://creativereview.imgix.net/content/uploads/2018/12/Unknown-5.jpeg?auto=compress,format&q=60&w=2024&h=3000"
-            alt="spiderman into the spider-verse"
-          />
+          <img src="" alt="" />
         </div>
         <div class="details">
           <div class="pure-menu custom-restricted-width">
-            <h1>Movie Title Goes HERE??:</h1>
+            <h1 id="detail-title">Movie Title</h1>
             <ul class="pure-menu-list detail-list">
-              <li class="pure-menu-item">Year:</li>
-              <li class="pure-menu-item">Length:</li>
-              <li class="pure-menu-item">Cast Members:</li>
-              <li class="pure-menu-item">Ratings: OVERALL AVERAGE</li>
+              <li class="pure-menu-item"><strong>Date of release:</strong></li>
+              <li class="pure-menu-item"><strong>Length:</strong></li>
+              <li class="pure-menu-item"><strong>Genre:</strong></li>
+              <li class="pure-menu-item"><strong>languages:</strong></li>
               <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">rotten</a>
+                <strong>Production Companies:</strong>
               </li>
               <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">imdb</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">etc.... with icons</a>
+                <strong>Status:</strong>
               </li>
             </ul>
           </div>
-          <div class="pure-menu custom-restricted-width">
-            <h1>Rating List:</h1>
-            <ul class="pure-menu-list">
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">IMDB</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">MovieDB</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">RottenTomato</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">RottenTomato Audience</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">RottenTomato Critic</a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">etc.... with icons</a>
-              </li>
-            </ul>
-          </div>
+        </div>
+      </div>
+      <div class="ratings">
+        <h2>Ratings:</h2>
+        <div class="pure-menu custom-restricted-width">
+          <ul class="pure-menu-list rating-list"></ul>
         </div>
       </div>
       <div class="text-content">
         <section class="synopsis">
           <h2>Synopsis</h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-          molestie odio tellus, sit amet accumsan sem pulvinar eu. Sed at rutrum
-          enim. Aenean ac cursus metus, ut faucibus ligula. Vivamus scelerisque,
-          leo et consequat lobortis, libero neque eleifend turpis, sed auctor ex
-          ligula ut sapien. Curabitur ut leo eu ex condimentum euismod et quis
-          sapien. Pellentesque ultrices, mi at tempus bibendum, diam quam
-          malesuada lacus, quis dictum nisl arcu non est. Maecenas scelerisque
-          nisi vitae congue semper. Sed hendrerit dolor tellus, nec blandit est
-          eleifend id. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Nam hendrerit ex sit amet est semper,
-          et aliquam odio volutpat.
+          <p></p>
+          <p></p>
         </section>
         <section class="description">
-          <h2>Description</h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-          molestie odio tellus, sit amet accumsan sem pulvinar eu. Sed at rutrum
-          enim. Aenean ac cursus metus, ut faucibus ligula. Vivamus scelerisque,
-          leo et consequat lobortis, libero neque eleifend turpis, sed auctor ex
-          ligula ut sapien. Curabitur ut leo eu ex condimentum euismod et quis
-          sapien. Pellentesque ultrices, mi at tempus bibendum, diam quam
-          malesuada lacus, quis dictum nisl arcu non est. Maecenas scelerisque
-          nisi vitae congue semper. Sed hendrerit dolor tellus, nec blandit est
-          eleifend id. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Nam hendrerit ex sit amet est semper,
-          et aliquam odio volutpat.
+          <h2>Additonal Resources</h2>
+          <p>Trailer:</p>
+          <iframe class="trailer-embbed" src="https://www.youtube.com/embed/">
+          </iframe>
         </section>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./assets/js/details-page.js"></script>
   </body>
 </html>
