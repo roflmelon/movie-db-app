@@ -7,36 +7,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
         <link rel="stylesheet" href="./assets/css/style.css">
         <title>Check your movie</title>
       
     </head>
     <body>
 
-        <!-- <div class="background-image"></div> -->
-        <!-- <img src="./assets/images/logoblack.png" alt="Logo 1" /> -->
-        
-       
-        <!-- <div class="search-box">
-            <input class="search-txt" type="text" name="" placeholder="Type to search">
-            <a class="search-btn" href="#">
-                <i class="fas fa-search"></i>
-            </a>
-        </div> -->
-        <div class="container">
+        <div id="dialog" title="No input!">
+            <p>Please enter a movie name!!</p>
+          </div>
 
+            <div class="container">
+            <img src="./assets/image/logoblack.png" alt="Logo 1" />
 
-            <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <form id="searchBar" class="search-box">
+                <!-- <input type="text" id="searchField" placeholder="Search for a movie..."> -->
+                <!-- <input onsearch ="Redirect();"/> -->
+                <input 
+                class="search-txt" 
+                type="text" 
+                name="searchBar"
+                placeholder="Type to search">
                 <a class="search-btn" href="#">
                     <i class="fas fa-search"></i>
                 </a>
-            </div>
+               <ul id="resultsList"></ul> 
+            </form>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 
     
 </html>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/js/script.js"></script>
