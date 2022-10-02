@@ -1,14 +1,16 @@
 const API_KEY = 'api_key=225258a348d1fa941425d56af1d01068';
-const searchBtnEl = document.getElementById("search-btn");
+const searchFormEl = document.getElementById("search-form");
 let resultTextEl= document.getElementById("result-text");
 let resultContentEl = document.querySelector('#result-content');
 let searchInput = document.getElementById("search-input");
+const btn2022El = document.getElementById("btnyear");
+
 
 function handleSearch(event) {
     event.preventDefault();
 
     const baseUrl = "https://api.themoviedb.org/3/search/movie?" + API_KEY + "&query=" + searchInput.value;
-    fetch(baseUrl, { method: "GET" })
+    fetch(baseUrl)
         .then(function (response) {
                 if (!response.ok) {
                 throw response.json();
@@ -28,7 +30,8 @@ function handleSearch(event) {
           printResults(data.results[i]);
         }
       }
-        })        
+        })       
+        
 }
 
 function printResults(data) {
@@ -54,7 +57,7 @@ function printResults(data) {
     );
     }
   //image
-  
+
     let movieBody = document.createElement('div');
     movieBody.classList.add('card-body');
     //movieBody.setAttribute("data-id",data.id);
@@ -65,33 +68,48 @@ function printResults(data) {
      movieTitleEl.textContent = data.title;
    //title
 
-     
-
      let movieDateEl = document.createElement('p');
      movieDateEl.textContent = data.release_date;
-    
-    
-    //  let detailbuttonEl= document.createElement('a');
-    //  detailbuttonEl.textContent = "Detail";
-    //  detailbuttonEl.setAttribute('href', "./detail-page.html");
-    //  detailbuttonEl.classList.add('btn');
-
+  
      movieBody.append(movieTitleEl, movieDateEl);
       resultContentEl.append(movieCard);
 
+      
 
 }
 
 function setLocationID(moveId){
-   //var ID = event.target.getAttribute("data-id")
-   //console.log("ID",ID,event.target)
-   //localStorage.setItem("movie-id",ID)
+   
   var queryString = './detail-page.html?id=' + moveId;
-
+  //https://www.themoviedb.org/movie/
   location.assign(queryString);
  
 }
+function getMovie2022(event){
+        event.preventDefault();
+        const baseUrl = "https://api.themoviedb.org/3/search/movie?" + API_KEY + "&query=" + searchInput.value;
+        fetch(baseUrl)
+            .then(function (response) {
+                    if (!response.ok) {
+                    throw response.json();
+                     }
+                   return response.json();
+            })
+            .then(function(data){
+              
+               resultTextEl.textContent = searchInput.value;
+               
+          if (!data.results.length) {
+            console.log('No results found!');
+            resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+          } else
+            {
+            resultContentEl.textContent = '';
+            for (var i = 0; i < data.results.length; i++) {
+                let dateArry = data.results[i].release_date.split('-');     
+                if(dateArry[0] === "2022"){
+                printResults(data.results[i]);
+                }}}})}
 
-
-
-searchBtnEl.addEventListener("click", handleSearch);
+searchFormEl.addEventListener("click", handleSearch);
+btn2022El.addEventListener("click", getMovie2022);
