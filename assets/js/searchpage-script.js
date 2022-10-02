@@ -39,7 +39,6 @@ function printResults(data) {
     let movieCard = document.createElement("div");
     movieCard.classList.add('card');
 
-    //movieCard.setAttribute("data-id",data.id);
     movieCard.addEventListener("click", function(event){
       setLocationID(data.id)
     })
@@ -60,14 +59,11 @@ function printResults(data) {
 
     let movieBody = document.createElement('div');
     movieBody.classList.add('card-body');
-    //movieBody.setAttribute("data-id",data.id);
     movieCard.append(movieImageEl, movieBody);
 
     let movieTitleEl = document.createElement('h5');
-
      movieTitleEl.textContent = data.title;
    //title
-
      let movieDateEl = document.createElement('p');
      movieDateEl.textContent = data.release_date;
   
