@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/base-min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/searchpage-style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/base-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="assets/css/searchpage-style.css" />
     <title>Movie Database</title>
-</head>
-<body> 
+  </head>
+  <body>
+    <div id="dialog" title="No input!">
+      <p>Please enter a movie name!!</p>
+    </div>
     <header>
-      <a href="./index.html" class="btn2"><img src="assets/image/Logo2.PNG"></a>
-      <a href="./index.html" class="btn1"><img src="assets/image/Logo2.PNG"></a>
+      <a href="./index.html" class="btn2"
+        ><img src="assets/image/Logo2.PNG"
+      /></a>
+      <a href="./index.html" class="btn1"
+        ><img src="assets/image/Logo2.PNG"
+      /></a>
       <form id="search-form">
-        <input id="search-input" class="form-input" type="text" placeholder="Enter a Movie Name!">
+        <input
+          id="search-input"
+          class="form-input"
+          type="text"
+          placeholder="Enter a Movie Name!"
+        />
         <button id="search-btn" class="button pure-button">Search</button>
       </form>
     </header>
-      
-        <main class="text-center">
-          <h3>Showing results for : <span id="result-text"></span></h3>
-          <button id="btnyear" class="button pure-button">2022</button>
-          <div id="result-content" class="d-flex flex-wrap justify-content-center"  >
-        </div>
-        </main>
-      
+
+    <main class="text-center">
+      <h3>Showing results for : <span id="result-text"></span></h3>
+      <div
+        id="result-content"
+        class="d-flex flex-wrap justify-content-center"
+      ></div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="assets/js/searchpage-script.js"></script>
-</body>
+  </body>
 </html>
-
-
-
