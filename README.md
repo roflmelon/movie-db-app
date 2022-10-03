@@ -14,6 +14,8 @@
 
 - [RapidAPI - MDBList API](https://rapidapi.com/linaspurinis/api/mdblist/ 'API')
 
+- [Presentation Slides](https://docs.google.com/presentation/d/1wtMTywO_X_OlmW_3SwYWigKXlKswWaca8npwKlicbm4/edit?usp=sharing 'Presentation Slides')
+
 #
 
 ## Installation
