@@ -1,4 +1,4 @@
-# <header align="center">Check The Movie</header>
+# <header align="center">Check Your Movie</header>
 
 ## <p align="center">A movie database that allows a user to get info and ratings on a specific movie. Our application also gives a brief summary of the specified movie and a short trailer from YouTube to be viewed</p>
 
