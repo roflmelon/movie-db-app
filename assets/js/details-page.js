@@ -29,8 +29,9 @@ $(document).ready(() => {
 function displayPage(data) {
   displayPoster(data);
   displayDetails(data);
-  displayRatings(data);
+  // displayRatings(data);
   displayDescription(data);
+  displayTrailer(data);
 }
 
 //display poster
@@ -95,36 +96,48 @@ function displayDetails(data) {
 }
 
 //fetching from a different api to get multiple ratings
-function displayRatings(data) {
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '7767d67388msh1effc9104bab0c8p123bb5jsnca4e00c9feee',
-      'X-RapidAPI-Host': 'mdblist.p.rapidapi.com',
-    },
-  };
+// function displayRatings(data) {
+//   const options = {
+//     method: 'GET',
+//     headers: {
+//       'X-RapidAPI-Key': '7767d67388msh1effc9104bab0c8p123bb5jsnca4e00c9feee',
+//       'X-RapidAPI-Host': 'mdblist.p.rapidapi.com',
+//     },
+//   };
 
-  //   fetch('tempData.json')
-  fetch(`https://mdblist.p.rapidapi.com/?tm=${data.id}`, options)
+//   //   fetch('tempData.json')
+//   fetch(`https://mdblist.p.rapidapi.com/?tm=${data.id}`, options)
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw response.status;
+//       } else {
+//         return response.json();
+//       }
+//     })
+//     .then((response) => {
+//       renderRatings(response);
+//     })
+//     .catch((err) => console.error(err));
+// }
+function displayTrailer(data) {
+  let movieId = data.id;
+  let apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US
+  `;
+  fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
         throw response.status;
-      } else {
-        return response.json();
       }
+      return response.json();
     })
-    .then((response) => {
-      renderRatings(response);
-      displayTrailer(response.trailer);
+    .then((data) => {
+      let video = data.results.find(({ type }) => type === 'Trailer');
+      let link = video.key;
+      $('.trailer-embbed').attr('src', `https://www.youtube.com/embed/${link}`);
     })
-    .catch((err) => console.error(err));
-}
-function displayTrailer(dataFromDisplayRating) {
-  if (dataFromDisplayRating !== null) {
-    let videoLink = dataFromDisplayRating.split('watch?v=');
-    let link = videoLink[1];
-    $('.trailer-embbed').attr('src', `https://www.youtube.com/embed/${link}`);
-  }
+    .catch((err) => {
+      console.log(err);
+    });
 }
 function renderRatings(dataFromDisplayRating) {
   let data = dataFromDisplayRating;
