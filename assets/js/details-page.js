@@ -29,7 +29,7 @@ $(document).ready(() => {
 function displayPage(data) {
   displayPoster(data);
   displayDetails(data);
-  // displayRatings(data);
+  displayRatings(data);
   displayDescription(data);
   displayTrailer(data);
 }
@@ -95,30 +95,31 @@ function displayDetails(data) {
   $('.detail-list').children().eq(5).append(data.status);
 }
 
-//fetching from a different api to get multiple ratings
-// function displayRatings(data) {
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': '7767d67388msh1effc9104bab0c8p123bb5jsnca4e00c9feee',
-//       'X-RapidAPI-Host': 'mdblist.p.rapidapi.com',
-//     },
-//   };
+// fetching from a different api to get multiple ratings
+function displayRatings(data) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '7767d67388msh1effc9104bab0c8p123bb5jsnca4e00c9feee',
+      'X-RapidAPI-Host': 'mdblist.p.rapidapi.com',
+    },
+  };
 
-//   //   fetch('tempData.json')
-//   fetch(`https://mdblist.p.rapidapi.com/?tm=${data.id}`, options)
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw response.status;
-//       } else {
-//         return response.json();
-//       }
-//     })
-//     .then((response) => {
-//       renderRatings(response);
-//     })
-//     .catch((err) => console.error(err));
-// }
+  //   fetch('tempData.json')
+  fetch(`https://mdblist.p.rapidapi.com/?tm=${data.id}`, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw response.status;
+      } else {
+        console.log(response);
+        return response.json();
+      }
+    })
+    .then((response) => {
+      renderRatings(response);
+    })
+    .catch((err) => console.error(err));
+}
 function displayTrailer(data) {
   let movieId = data.id;
   let apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US

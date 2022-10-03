@@ -1,38 +1,63 @@
 # <header align="center">Check The Movie</header>
 
+## <p align="center">A movie database that allows a user to get info and ratings on a specific movie. Our application also gives a brief summary of the specified movie and a short trailer from YouTube to be viewed</p>
 
-##  <p align="center">A movie database that allows a user to get info and ratings on a specific movie. Our application also gives a brief summary of the specified movie and a short trailer from YouTube to be viewed</p>
 #
+
 ## Links
 
-- [Repo](https://github.com/roflmelon/movie-db-app "Check The Movie Repo")
+- [Repository](https://github.com/roflmelon/movie-db-app 'Check The Movie Repo')
 
-- [Deploy](                                             "Deploy page")
+- [Deploy](https://roflmelon.github.io/movie-db-app/ 'Deploy page')
 
-- [API 1](https://developers.themoviedb.org/3/getting-started/introduction "API")
+- [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction 'API')
 
-- [API 2](https://rapidapi.com/linaspurinis/api/mdblist/ "API")
+- [RapidAPI - MDBList API](https://rapidapi.com/linaspurinis/api/mdblist/ 'API')
+
 #
+
+## Installation
+
+No installation required. Just click the live link to use.
+
+#
+
+## Usage
+
+- Use home screen to start your search.
+- All search results will be shown in the results page.
+- Hover over the thumbnails/posters to display the title and year of release for the movie.
+- Click the thumbnail/poster to display more detailed information about the movie.
+
+#
+
 ## Screenshots
 
-![Home Page](/assets/image/Screenshot%20index-page.png "Home Page")
+![Home Page](/assets/image/homescreenscreenshot.jpg 'Home Page')
 
-![](/assets/image/Screenshot%20search-page.png)
+![](/assets/image/searchpagescreenshot.jpg)
 
-![]("detail-page goes here")
+![](/assets/image/moviedetailpagescreenshot.jpg)
+
 #
+
 ## Built With
 
 - JavaScript
-- Server APIs
+- Jquery
+- JqueryUI
+- TMDB API and RapidAPI (MDBList API)
 - HTML
 - CSS
+- Bootstrap
 - Pure.CSS
+
 #
+
 ## Author
 
-- **Hao Zhao** - [GitHub](https://github.com/roflmelon "Hao Zhao")
+- **Hao Zhao** - [GitHub](https://github.com/roflmelon 'Hao Zhao')
 
-- **Shayne Nimesh Karunakaran** - [GitHub](https://github.com/ShayneKaruna "Shayne Nimesh Karunakaran")
+- **Shayne Nimesh Karunakaran** - [GitHub](https://github.com/ShayneKaruna 'Shayne Nimesh Karunakaran')
 
-- **Xin Ling** - [GitHub](https://github.com/KennyLingx "Xin Ling")
+- **Xin Ling** - [GitHub](https://github.com/KennyLingx 'Xin Ling')
