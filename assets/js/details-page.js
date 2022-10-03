@@ -99,7 +99,7 @@ function displayRatings(data) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'e8dfe66e40mshe3779be789d5143p107061jsnc6b53291ece3',
+      'X-RapidAPI-Key': '7767d67388msh1effc9104bab0c8p123bb5jsnca4e00c9feee',
       'X-RapidAPI-Host': 'mdblist.p.rapidapi.com',
     },
   };
