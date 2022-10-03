@@ -1,16 +1,18 @@
 * {
   box-sizing: border-box;
   line-height: 1.5rem;
+  color: white;
 }
 body {
   display: flex;
   justify-content: center;
-  background-color: grey;
+  background-color: rgb(0, 0, 0);
+  background-image: url('../image/background.gif');
+  background-size: contain;
+  background-repeat: repeat;
 }
 .container {
-  background-color: darkgrey;
   max-width: 2000px;
-  width: 80%;
   height: fit-content;
 }
 h1 {
@@ -19,10 +21,12 @@ h1 {
 }
 /* Navbar elements */
 .nav-bar {
-  background-color: sienna;
   width: 100%;
   height: fit-content;
   padding: 20px;
+}
+.nav-bar form input {
+  color: black;
 }
 
 .pure-form * {
@@ -44,7 +48,7 @@ h1 {
   display: flex;
   max-width: 1200px;
   margin: auto;
-  background-color: lightblue;
+  background-color: rgb(25, 25, 25);
 }
 .poster {
   display: flex;
@@ -74,6 +78,10 @@ img {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgb(60, 51, 88);
 }
 
 .ratings ul {
@@ -97,7 +105,7 @@ img {
   height: 100%;
   width: 100%;
   padding: 2em;
-  background-color: yellow;
+  background-color: rgb(60, 51, 88);
 }
 .description {
   margin: 0;
@@ -107,8 +115,7 @@ img {
   word-wrap: break-word;
   height: 100%;
   width: 100%;
-  background-color: skyblue;
-  color: black;
+  background-color: rgb(60, 51, 88);
 }
 .description a {
   text-decoration: none;
@@ -152,5 +159,10 @@ iframe {
   }
   .main-content {
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .pure-form button[type='submit'] {
+    margin: 0 0 0;
   }
 }

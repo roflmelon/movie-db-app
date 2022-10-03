@@ -45,41 +45,45 @@ function handleSearch(event) {
 function printResults(data) {
   let movieCard = document.createElement('div');
   movieCard.classList.add('card');
-
+  //eventlistner for each of the cards
   movieCard.addEventListener('click', function (event) {
-    setLocationID(data.id);
+    viewMovieDetail(data.id);
   });
 
+  let cardContainer = $('<div>').addClass('img-container').appendTo(movieCard);
+  let overlay = $('<div>').addClass('overlay').appendTo(cardContainer);
+
   let movieImageEl = document.createElement('img');
-  movieImageEl.setAttribute('src', '');
   movieImageEl.setAttribute('data-id', data.id);
-  movieImageEl.classList.add('btn');
 
   if (!data.poster_path) {
     movieImageEl.setAttribute('src', './assets/image/No-Image-Placeholder.png');
+    movieImageEl.setAttribute('alt', 'Placeholder image poster');
   } else {
     movieImageEl.setAttribute(
       'src',
       'https://image.tmdb.org/t/p/w500' + data.poster_path
     );
+    movieImageEl.setAttribute('alt', data.title + ' poster');
   }
   //image
 
   let movieBody = document.createElement('div');
   movieBody.classList.add('card-body');
-  movieCard.append(movieImageEl, movieBody);
+  cardContainer.append(movieImageEl, movieBody);
 
   let movieTitleEl = document.createElement('h5');
   movieTitleEl.textContent = data.title;
   //title
   let movieDateEl = document.createElement('p');
   movieDateEl.textContent = data.release_date;
-
   movieBody.append(movieTitleEl, movieDateEl);
+  overlay.append(movieBody);
+  //append cards to main content section
   resultContentEl.append(movieCard);
 }
 
-function setLocationID(moveId) {
+function viewMovieDetail(moveId) {
   var queryString = './detail-page.html?id=' + moveId;
   location.assign(queryString);
 }

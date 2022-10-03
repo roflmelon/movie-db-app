@@ -31,6 +31,7 @@ function displayPage(data) {
   displayDetails(data);
   displayRatings(data);
   displayDescription(data);
+  displayTrailer(data);
 }
 
 //display poster
@@ -94,7 +95,7 @@ function displayDetails(data) {
   $('.detail-list').children().eq(5).append(data.status);
 }
 
-//fetching from a different api to get multiple ratings
+// fetching from a different api to get multiple ratings
 function displayRatings(data) {
   const options = {
     method: 'GET',
@@ -110,21 +111,34 @@ function displayRatings(data) {
       if (!response.ok) {
         throw response.status;
       } else {
+        console.log(response);
         return response.json();
       }
     })
     .then((response) => {
       renderRatings(response);
-      displayTrailer(response.trailer);
     })
     .catch((err) => console.error(err));
 }
-function displayTrailer(dataFromDisplayRating) {
-  if (dataFromDisplayRating !== null) {
-    let videoLink = dataFromDisplayRating.split('watch?v=');
-    let link = videoLink[1];
-    $('.trailer-embbed').attr('src', `https://www.youtube.com/embed/${link}`);
-  }
+function displayTrailer(data) {
+  let movieId = data.id;
+  let apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US
+  `;
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw response.status;
+      }
+      return response.json();
+    })
+    .then((data) => {
+      let video = data.results.find(({ type }) => type === 'Trailer');
+      let link = video.key;
+      $('.trailer-embbed').attr('src', `https://www.youtube.com/embed/${link}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 function renderRatings(dataFromDisplayRating) {
   let data = dataFromDisplayRating;
