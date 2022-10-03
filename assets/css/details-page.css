@@ -21,23 +21,35 @@ h1 {
 }
 /* Navbar elements */
 .nav-bar {
+  display: flex;
   width: 100%;
   height: fit-content;
   padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar a {
+  height: 5em;
+  float: left;
+}
+.nav-bar a img {
+  height: 100%;
 }
 .nav-bar form input {
   color: black;
+  float: right;
+  width: fit-content;
 }
 
 .pure-form * {
   margin: 0.3em;
 }
 .pure-form {
-  margin: auto;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 2em;
 }
 
 /* main body contents */
